@@ -1,0 +1,24 @@
+end = list.length-1,start = 0;
+sign = 1,index = start;
+    
+while(list.coun != 1){
+  remove at index in list
+  
+  index += sign;
+
+  
+  if (index == list.length){
+    if （start > end) {start = list.length-1;
+    sign =1;
+    }
+    else{ end = list.length-1;
+    sign = -2;
+    }
+    swap(start, end);
+
+    index = start;
+  }
+  
+}
+
+ return list[0];
