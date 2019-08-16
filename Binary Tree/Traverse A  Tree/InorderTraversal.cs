@@ -68,27 +68,48 @@ public class Solution {
         return list;
     }
 
-    // iterate with stack but don 't change the orignal node
-    // https: //www.geeksforgeeks.org/inorder-tree-traversal-without-recursion/
+    // iterate 02
     public IList<int> InorderTraversal (TreeNode root) {
-        List<int> list = new List<int> ();
-        Stack<TreeNode> stack = new Stack<TreeNode> ();
-        if (root == null) return list;
+        var stack = new Stack<TreeNode> ();
+        var list = new List<int> ();
 
-        stack.Push (root);
-        var cur = root.left;
-
-        while (stack.Count > 0 || cur != null) {
-            while (cur != null) {
-                stack.Push (cur);
-                cur = cur.left;
+        while (stack.Count > 0 || root != null) {
+            while (root != null) {
+                stack.Push (root);
+                root = root.left;
             }
 
             var node = stack.Pop ();
             list.Add (node.val);
-            cur = node.right;
+            root = node.right;
+
         }
 
         return list;
+
     }
+
+    // Morris Traversal
+    public IList<int> InorderTraversal (TreeNode root) {
+        var cur = root;
+        List<int> list = new List<int> ();
+
+        while (cur != null) {
+            if (cur.left == null) {
+                list.Add (cur.val);
+                cur = cur.right;
+            } else {
+                var prev = cur.left;
+                while (prev.right != null) {
+                    prev = prev.right;
+                }
+                var temp = cur.left;
+                cur.left = null;
+                prev.right = cur;
+                cur = temp;
+            }
+        }
+        return list;
+    }
+
 }

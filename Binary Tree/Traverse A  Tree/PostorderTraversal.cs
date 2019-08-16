@@ -70,6 +70,7 @@ public class Solution {
     // Iteration with one stack
     //push directly root node two times while traversing to the left
     // Where Amazing happens
+    //Fuck your amazing things. You are just fucking write something wrong in comparing line 93 - 73;
     //1 false
     public IList<int> PostorderTraversal (TreeNode root) {
         var list = new List<int> ();
@@ -99,6 +100,7 @@ public class Solution {
 
         return list;
     }
+
     //2 correct
     public IList<int> PostorderTraversal (TreeNode root) {
         var list = new List<int> ();
@@ -118,7 +120,6 @@ public class Solution {
             root = stack.Pop ();
 
             if (stack.Count > 0 && root == stack.Peek ()) {
-
                 root = root.right;
             } else {
                 list.Add (root.val);
@@ -135,8 +136,7 @@ public class Solution {
     public IList<int> PostorderTraversal (TreeNode root) {
         var list = new List<int> ();
         if (root == null) return list;
-
-        Stack<TreeNode> stack = new Stack<TreeNode> ();
+        var stack = new Stack<TreeNode> ();
 
         do {
             while (root != null) {
@@ -145,15 +145,12 @@ public class Solution {
                 root = root.left;
             }
 
-            var item = stack.Pop ();
-            //there is something wrong
-            // if (stack.Count > 0 && item.right != null && item.right == stack.Peek ()) {
-            if (stack.Count > 0 && item.right == stack.Peek ()) {
-                stack.Pop ();
-                stack.Push (item);
-                root = item.right;
+            var node = stack.Pop ();
+            if (stack.Count > 0 && stack.Peek () == node.right) {
+                root = stack.Pop ();
+                stack.Push (node);
             } else {
-                list.Add (item.val);
+                list.Add (node.val);
                 root = null;
             }
         } while (stack.Count > 0);
