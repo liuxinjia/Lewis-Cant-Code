@@ -58,7 +58,7 @@ public class Solution {
     }
 
     //Recursion
-    public TreeNode DeleteNode (TreeNode root, int key) {
+    public TreeNode DeleteNode (TreeNode cu, int key) {
         if (cu == null) return null;
 
         if (cu.val > key) {
@@ -77,15 +77,19 @@ public class Solution {
         return cu;
     }
 
-    TreeNode FindMin (TreeNode root) {
-        while (root.left != null) {
-            root = root.left;
-        }
+    //recursion optimize 1
+    public TreeNode DeleteNode (TreeNode root, int key) {
+        if (root == null) return null;
 
+        if (root.val > key) root.left = DeleteNode (root.left, key);
+        else if (root.val < key) root.right = DeleteNode (root.right, key);
+        else {
+            return DeleteRootNode (root);
+        }
         return root;
     }
 
-    //Iteration
+    //Iteration optimize 1
     public TreeNode DeleteNode (TreeNode root, int key) {
         var cur = root;
         TreeNode prev = null;
@@ -122,5 +126,13 @@ public class Solution {
         }
 
         return node;
+    }
+
+    TreeNode FindMin (TreeNode root) {
+        while (root.left != null) {
+            root = root.left;
+        }
+
+        return root;
     }
 }

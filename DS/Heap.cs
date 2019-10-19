@@ -7,7 +7,7 @@ class Program {
     public static void Main () {
         var stack = new Stack<int> ();
         int[][] buildings = {
-            new int[] { 2, 9, 10 },
+            new int[] { 2, 92, 10 },
             new int[] { 3, 7, 15 },
             new int[] { 5, 12, 12 },
             new int[] { 15, 20, 10 },
@@ -37,10 +37,35 @@ class Program {
         }
         Console.WriteLine ();
 
+        var array = new MinHeap<Node> ();
+        //List<int> array = new List<int>();
+        for (int i = 0; i < 30; i++)
+            array.Push (new Node (i, i, i));
+
+        int count = 0;
+        foreach (Node item in array) {
+            Console.WriteLine (item.val + ", count:" + ++count);
+        }
+    }
+
+    class Node : IComparable<Node> {
+        public int val;
+        public int index;
+        public readonly int prim;
+
+        public Node (int _val, int _index, int _prim) {
+            val = _val;
+            index = _index;
+            prim = _prim;
+        }
+
+        public int CompareTo (Node other) {
+            return val.CompareTo (other.val);
+        }
     }
 }
 
-/* #region  Heap */
+#region Heap
 
 public abstract class Heap<T> : IEnumerable
 where T : IComparable<T> {
@@ -248,8 +273,8 @@ where T : IComparable<T> {
 
     protected abstract bool Compare (T item1, T item2);
 
-    public struct Enumerator : IEnumerator<T>,
-    System.Collections.IEnumerator {
+    public struct Enumerator : IEnumerator,
+    IEnumerator<T> {
         Heap<T> _heap;
         T currentElement;
         int _index;
@@ -260,8 +285,15 @@ where T : IComparable<T> {
             _index = -2;
         }
 
-        public T Current =>
-            throw new NotImplementedException ();
+        public T Current {
+            get {
+                //enumNotStarted
+                if (_index == -2) throw new NullReferenceException ();
+                //enumEnded
+                if (_index == -1) throw new IndexOutOfRangeException ();
+                return currentElement;
+            }
+        }
 
         object IEnumerator.Current {
             get {
@@ -364,3 +396,5 @@ public class MaxHeap<T> : Heap<T> where T : IComparable<T> {
     }
 
 }
+
+#endregion
