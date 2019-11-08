@@ -645,7 +645,7 @@ section.cover.has-mask .mask {
 
 .sidebar,
 body {
-    background-color: #081020
+    background-color: #212121
 }
 
 .sidebar {
@@ -800,7 +800,7 @@ body {
     white-space: nowrap;
     font-weight: 600;
     font-family: inherit;
-    background-color: #081020
+    background-color: #212121
 }
 
 .markdown-section pre {

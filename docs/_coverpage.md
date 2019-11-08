@@ -43,10 +43,10 @@
 
 # MythBusters JS
 
-> A JavaScript Handbook exploring perfomance & readibility.
+> A JavaScript Handbook exploring & readibility.
 
-[GitHub](https://github.com/Kikobeats/js-mythbusters)
+[GitHub](https://github.com/liuxinjia/LeetCode)
 [Get Started](#get-started)
 
 <!-- background color -->
-![color](#081020)
+![color](#401155)
