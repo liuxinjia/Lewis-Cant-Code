@@ -132,6 +132,9 @@ where T : IComparable<T> {
     }
 
     public bool Contains (T item) {
+        if (item.CompareTo (_array[0]) > 0) return false;
+        if (item.CompareTo (_array[_lastPos - 1]) < 0) return false;
+
         for (int i = 0; i < _lastPos; i++) {
             if (((Object) item) == null) {
                 if (((Object) _array[i]) == null)
@@ -338,6 +341,19 @@ where T : IComparable<T> {
 }
 
 public class MinHeap<T> : Heap<T> where T : IComparable<T> {
+
+    public MinHeap (int count) : base (count) {
+
+    }
+
+    public MinHeap () : base () {
+
+    }
+
+    public MinHeap (IEnumerable<T> collection) : base (collection) {
+
+    }
+
     public T Min {
         get => Peek ();
     }
@@ -367,6 +383,17 @@ public class MinHeap<T> : Heap<T> where T : IComparable<T> {
 }
 
 public class MaxHeap<T> : Heap<T> where T : IComparable<T> {
+    public MaxHeap (int count) : base (count) {
+
+    }
+
+    public MaxHeap () : base () {
+
+    }
+
+    public MaxHeap (IEnumerable<T> collection) : base (collection) {
+
+    }
     public T Max => Peek ();
 
     protected override bool Compare (T item1, T item2) {
