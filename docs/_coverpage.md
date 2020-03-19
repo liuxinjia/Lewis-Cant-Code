@@ -41,7 +41,7 @@
   </div>
 </div>
 
-# Lewis cant code
+# Lewis Cant Code
 
 > A algorithmn and data structure collection.
 
