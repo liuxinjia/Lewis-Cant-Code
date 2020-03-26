@@ -41,9 +41,9 @@
   </div>
 </div>
 
-# MythBusters JS
+# Lewis Cant Code
 
-> A JavaScript Handbook exploring & readibility.
+> A algorithmn and data structure collection.
 
 [GitHub](https://github.com/liuxinjia/LeetCode)
 [Get Started](#get-started)

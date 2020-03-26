@@ -3,27 +3,27 @@
 	* [Resources](resources.md)
 	* [Changelog](changelog.md)
 
-* Array
+* Queue and Stack
 	* [Preallocation](array/preallocation.md)
 	* [.pop over .shift](array/pop-or-shift.md)
 	* [arguments is special](array/arguments.md)
 
-* Date
+* Set and Map
 	* [Creating timestamp](date/timestamp.md)
 
-* Number
+* Linked List
 	* [Parsing string](number/parse-string.md)
 
-* Function
+* Binary Tree
 	* [new agnostic](function/new.md)
 	* [bind is slower](function/bind.md)
 
-* RegExp
+* Heap
 	* [Use the correct method](regexp/correct-methods.md)
 	* [Focus on failing faster](regexp/fail-faster.md)
 	* [Mandatory Fields](regexp/flags.md)
 
-* V8
+* DP
 	* [Hidden Class](v8-tips/hidden-class.md)
 	* [Sparse Arrays](v8-tips/sparse-arrays.md)
 	* [Properties Names](v8-tips/properties-names.md)
