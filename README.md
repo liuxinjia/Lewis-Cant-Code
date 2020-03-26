@@ -1,3 +1,5 @@
+[![Run on Repl.it](https://repl.it/badge/github/liuxinjia/Lewis-Cant-Code)](https://repl.it/github/liuxinjia/Lewis-Cant-Code)
+
 # LeetCode
 DataStructure and Algorithm Study
 
