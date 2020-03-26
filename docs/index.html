@@ -2,35 +2,103 @@
 <html lang="en">
 
 <head>
-    <!-- Basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <title>Oglang v0.7.2</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="vendor/themes/dark.css">
+  <style>
+    .sidebar,
+    body {
+      background-color: #303030;
+    }
 
-    <link rel="stylesheet" href="style.min.css">
-    <link rel="shortcut icon" href="https://github.com/liuxinjia/LeetCode/blob/master/docs/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codecopy/umd/codecopy.min.css">
+    .sidebar {
+      border-right-width: 3px;
+    }
+
+    .lang-og>.token.lol {
+      color: hsl(0, 0%, 100%);
+    }
+
+    .lang-og>.token.number,
+    .lang-og>.token.boolean {
+      color: hsl(79, 75%, 51%);
+    }
+
+    .lang-og>.token.keyword {
+      color: #00a7e9;
+      /* color: hsl(12, 80%, 42%); */
+    }
+
+    .lang-og>.token.returnType,
+    .lang-og>.token.argType,
+    .lang-og>.token.structInst,
+    .lang-og>.token.className,
+    .lang-og>.token.externalReceiver,
+    .lang-og>.token.builtin {
+      color: hsl(266, 88%, 70%);
+    }
+
+    .lang-og>.token.operator,
+    .lang-og>.token.package,
+    .lang-og>.token.this,
+    .lang-og>.token.parens {
+      color: hsl(0, 98%, 37%);
+    }
+
+    /* .lang-og > .token.packageName {
+      color: #657b83;
+    } */
+    .lang-og>.token.trolol {
+      color: hsl(24, 55%, 48%);
+    }
+
+    .lang-og>.token.assign,
+    .markdown-section pre>code.lang-og {
+      color: hsl(101, 20%, 53%);
+      /* color: hsl(0, 0%, 73%); */
+    }
+
+    .lang-og>.token.funcName,
+    .lang-og>.token.secondary,
+    .lang-og>.token.funcCall,
+    .lang-og>.token.externalMethod {
+      color: hsl(165, 100%, 32%);
+      /* color: hsl(51, 100%, 32%); */
+    }
+  </style>
 </head>
 
 <body>
-    <nav>
-        <a href="#/">EN</a>
-        <a href="#/zh-cn/">中文</a>
-    </nav>
-    <div id="app"></div>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      coverpage: true,
+      name: 'Lewis Cant Code',
+      repo: 'https://github.com/liuxinjia/Lewis-Cant-Code',
+      loadSidebar: true,
+      autoHeader: true,
+      subMaxLevel: 3,
+      auto2top: true,
 
+      plugins: [
+        EditOnGithubPlugin.create(
+          'https://github.com/liuxinjia/Lewis-Cant-Code/master/docs/',
+          null,
+          function(file){
+            return 'edit on github'
+          })
+      ]
+    }
+  </script>
+  <script src="vendor/docsify.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-go.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+  <script src="vendor/prism-og.js"></script>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
 </body>
-
-<script src="main.in.js"></script>
-<script src="//unpkg.com/docsify@latest/lib/plugins/external-script.min.js"></script>
-<script src="//unpkg.com/docsify@latest/lib/plugins/ga.min.js"></script>
-<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-<script async src="//cdn.headwayapp.co/widget.js"></script>
-<script src="//cdn.jsdelivr.net/npm/codecopy/umd/codecopy.min.js"></script>
-<script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
-
-<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-<script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
-<script src="//unpkg.com/docsify@latest/lib/docsify.min.js"></script>
-<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
 
 </html>
