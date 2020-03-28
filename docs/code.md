@@ -50,7 +50,7 @@
 - [ ] Adapt Golang tooling like `gofmt` or `golint`
 - [ ] Allow to give arguments to finaly executed binary with `og -r -- arg1 arg2`
 - [ ] Fix typeswitch that cannot allow a pointer as second case without `;`
-    ```go
+    ```og
       switch template.Node.(type)
         *FunctionDecl => @GenerateTopFns(template); // <- that `;` is needed here
         *StructType => @GenerateStruct(template)
