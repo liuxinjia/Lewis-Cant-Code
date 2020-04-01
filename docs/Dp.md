@@ -1,4 +1,5 @@
-##  the fewest (or largest) of combinations
+## DP Package
+###  the fewest (or largest) of combinations
 ![enter image description here](https://leetcode.com/media/original_images/322_coin_change_table.png)
 
 ``` og
@@ -17,7 +18,7 @@
     }
 ```
 
-## the number of combinations
+### the number of combinations
 https://www.youtube.com/watch?v=xCbYmUPvc2Q
 ``` og
 class Solution {
