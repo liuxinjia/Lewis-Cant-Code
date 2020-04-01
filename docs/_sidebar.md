@@ -4,4 +4,4 @@
 * [Guide](guide.md)
 * [Test](code.md)
 * [Type](built-intype.md)
-* [Type] (dp.md)
+* [DP](dp.md)
