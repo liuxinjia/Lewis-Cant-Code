@@ -2,6 +2,11 @@
 
 * [Home](/)
 * [Guide](guide.md)
-* [Test](code.md)
-* [Type](built-intype.md)
-* [DP](dp.md)
+
+- Basic
+    - [Type](Basic/built-intype.md)
+    - [sort](Basic/sort.md)
+
+- Algorithmn
+    - [DP](Algorithmn/dp.md)
+
